@@ -58,10 +58,10 @@ export default function MapChart() {
   return (
     <div>
       <h2 style={{ textAlign: 'center', margin: '1rem 0' }}>
-        Regions Affected by Covid-19
+        Regions Affected by COVID-19
       </h2>
       <Map
-        style={{ height: '480px', width: '100%' }}
+        style={{ height: '480px', width: '100%', marginBottom: '1rem' }}
         className='mapStyle'
         zoom={1}
         center={[centerLat, centerLong]}

@@ -48,6 +48,13 @@ export default function CountriesBarGraph() {
     axios
       .get(`https://corona.lmao.ninja/countries/${searchCountries}`)
       .then(res => {
+        if (typeof res.data === 'string') {
+          return setValues({
+            ...values,
+            graphName: 'Please Select Another Country ',
+            graphData: []
+          });
+        }
         const data = res.data;
         const graphName = `${data.country} Total Cases: ${data.cases}`;
         const graphData = [

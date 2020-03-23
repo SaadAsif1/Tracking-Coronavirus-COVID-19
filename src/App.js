@@ -3,6 +3,7 @@ import Alert from './components/Alert/Alert';
 import Countries from './components/Countries/Countries';
 import States from './components/Us-States/States';
 import MapChart from './components/Infected-Map/MapChart';
+import TimelineChart from './components/Timeline-Chart/TimelineChart';
 import { Tabs } from 'antd';
 const { TabPane } = Tabs;
 
@@ -18,10 +19,8 @@ export default function App() {
           <TabPane tab='States' key='2'>
             <States />
           </TabPane>
-          <TabPane tab='Tab Title 3' key='3'>
-            <p>Content of Tab Pane 3</p>
-            <p>Content of Tab Pane 3</p>
-            <p>Content of Tab Pane 3</p>
+          <TabPane tab='COVID-19 Timeline' key='3'>
+            <TimelineChart />
           </TabPane>
           <TabPane tab='COVID-19 Map Data' key='4'>
             <MapChart />
