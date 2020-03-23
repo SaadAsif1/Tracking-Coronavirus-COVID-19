@@ -1,0 +1,28 @@
+.stateNav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  width: 20rem;
+}
+
+.stateInput {
+  width: 20rem;
+}
+
+@media screen and (max-width: 1160px) {
+  .stateNav {
+    display: block;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .button {
+    width: 100%;
+  }
+
+  .stateInput {
+    width: 100%;
+  }
+}

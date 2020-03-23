@@ -1,8 +1,77 @@
-.container {
+.containerText {
   background-color: rgb(0, 0, 0);
   border-radius: 1rem;
   text-align: center;
   color: white;
   font-weight: 700;
   font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 3rem;
 }
+
+.alertContainer {
+  margin: 0 auto;
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+}
+
+.button {
+  margin: 1rem 0;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+.buttonText {
+  font-weight: 700;
+  color: white;
+}
+
+.cardStyle {
+  padding: 1rem;
+}
+
+.errorsSearch {
+  text-align: center;
+  padding: 0.8rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.search {
+  width: 50rem;
+}
+
+@media screen and (max-width: 860px) {
+  .buttonContainer {
+    display: block;
+  }
+
+  .button {
+    margin: 1rem 0;
+  }
+
+  .buttonText {
+    font-weight: 300;
+    color: white;
+  }
+
+  .search {
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .containerText {
+    display: block;
+  }
+}
+
+/* Smartphones (portrait and landscape) ----------- */
+/* @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+  .buttonContainer {
+    display: block;
+  }  } */

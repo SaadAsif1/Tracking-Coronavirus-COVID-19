@@ -1,5 +1,14 @@
 import React from 'react';
-import { BarChart, CartesianGrid, XAxis, YAxis, Tooltip, Legend, Bar } from 'recharts';
+import {
+  BarChart,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+  Bar,
+  ResponsiveContainer
+} from 'recharts';
 
 export default function AlertBarGraph({ data }) {
   const barData = [
@@ -9,27 +18,27 @@ export default function AlertBarGraph({ data }) {
   ];
 
   return (
-    <div>
-      <BarChart
-        width={500}
-        height={300}
-        data={barData}
-        margin={{
-          top: 20,
-          right: 30,
-          left: 20,
-          bottom: 5
-        }}
-      >
-        <CartesianGrid strokeDasharray='3 3' />
-        <XAxis dataKey='name' />
-        <YAxis />
-        <Tooltip />
-        <Legend verticalAlign='top' height={36} />
-        <Bar dataKey='Death' stackId='a' fill='#8884d8' />
-        <Bar dataKey='Cases' stackId='a' fill='#82ca9d' />
-        <Bar dataKey='Recovered' stackId='a' fill='#000' />
-      </BarChart>
+    <div style={{ width: '100%', height: 300 }}>
+      <ResponsiveContainer>
+        <BarChart
+          data={barData}
+          margin={{
+            top: 20,
+            right: 30,
+            left: 20,
+            bottom: 5
+          }}
+        >
+          <CartesianGrid strokeDasharray='3 3' />
+          <XAxis dataKey='name' />
+          <YAxis />
+          <Tooltip />
+          <Legend verticalAlign='top' height={36} />
+          <Bar dataKey='Death' stackId='a' fill='#8884d8' />
+          <Bar dataKey='Cases' stackId='a' fill='#82ca9d' />
+          <Bar dataKey='Recovered' stackId='a' fill='#000' />
+        </BarChart>
+      </ResponsiveContainer>
     </div>
   );
 }
