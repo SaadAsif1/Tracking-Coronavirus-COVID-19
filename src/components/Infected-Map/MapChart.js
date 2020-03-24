@@ -62,7 +62,6 @@ export default function MapChart() {
       </h2>
       <Map
         style={{ height: '480px', width: '100%', marginBottom: '1rem' }}
-        className='mapStyle'
         zoom={1}
         center={[centerLat, centerLong]}
         bounds={[
@@ -81,11 +80,11 @@ export default function MapChart() {
                 key={k}
                 center={city.coordinates}
                 radius={4 * Math.log(Number(city.confirmed) / 10)}
-                fill='true'
                 fillOpacity={0.5}
                 stroke={false}
               >
                 <Tooltip direction='top'>
+                  {console.log(city.confirmed)}
                   <h3>{city.name}</h3>
                   <hr />
                   <div>Confirmed Cases: {city.confirmed}</div>

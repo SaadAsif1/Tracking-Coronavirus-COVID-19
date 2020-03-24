@@ -12,6 +12,22 @@ h6 {
   margin: 0;
 }
 
+.docRef {
+  text-align: right;
+  margin-top: 0.3rem;
+  padding: 0.2rem;
+  color: black;
+  font-weight: 500;
+}
+
+.apiRef {
+  color: #fff;
+  border-radius: 10rem;
+  background-color: rgb(0, 0, 0);
+  font-weight: 800;
+  padding: 0.2rem;
+}
+
 .card-container > .ant-tabs-card > .ant-tabs-content {
   margin-top: -16px;
 }
@@ -33,4 +49,10 @@ h6 {
 .card-container > .ant-tabs-card > .ant-tabs-bar .ant-tabs-tab-active {
   border-color: #fff;
   background: #fff;
+}
+
+@media screen and (max-width: 1160px) {
+  .docRef {
+    text-align: center;
+  }
 }

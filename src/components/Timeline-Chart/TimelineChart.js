@@ -16,7 +16,7 @@ const { Search } = Input;
 export default function TimelineChart() {
   const [values, setValues] = useState({
     data: '',
-    timelineSearch: 'China',
+    timelineSearch: 'USA',
     timelineName: ''
   });
 
@@ -24,7 +24,7 @@ export default function TimelineChart() {
 
   useEffect(() => {
     axios
-      .get('https://corona.lmao.ninja/historical/china')
+      .get('https://corona.lmao.ninja/historical/usa')
       .then(res => {
         const dataDates = Object.keys(res.data.timeline.cases);
         const cases = Object.values(res.data.timeline.cases);
