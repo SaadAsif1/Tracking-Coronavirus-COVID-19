@@ -90,7 +90,7 @@ export default function TimelineChart() {
   };
 
   return (
-    <div>
+    <div style={{ marginBottom: '2rem' }}>
       <Search
         placeholder='Countries COVID-19 Timeline Graphs'
         onSearch={handleSearch}

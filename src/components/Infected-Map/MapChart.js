@@ -56,7 +56,7 @@ export default function MapChart() {
   let distanceLong = mapLatData.maxLong - mapLatData.minLong;
   let bufferLong = distanceLong * 0.15;
   return (
-    <div>
+    <div style={{ marginBottom: '2rem' }}>
       <h2 style={{ textAlign: 'center', margin: '1rem 0' }}>
         Regions Affected by COVID-19
       </h2>

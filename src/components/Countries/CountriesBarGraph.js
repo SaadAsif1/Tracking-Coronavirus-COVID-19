@@ -69,7 +69,7 @@ export default function CountriesBarGraph() {
   };
 
   return (
-    <div>
+    <div style={{ marginBottom: '2rem' }}>
       <Search
         placeholder='Countries COVID-19 Graphs'
         onSearch={handleSearch}
