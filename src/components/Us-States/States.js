@@ -18,7 +18,6 @@ export default function States() {
     axios
       .get('https://corona.lmao.ninja/states')
       .then(res => {
-        console.log(res.data);
         setValues({ ...values, data: res.data });
       })
       .catch(err => {
