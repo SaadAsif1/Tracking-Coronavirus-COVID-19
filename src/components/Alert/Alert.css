@@ -22,13 +22,11 @@
 
 .button {
   margin: 0.5rem 0;
-  margin-bottom: 1rem;
   text-align: center;
-  margin-right: 1rem;
 }
 
 .buttonText {
-  font-weight: 700;
+  font-weight: 300;
   color: white;
 }
 
@@ -44,7 +42,8 @@
 }
 
 .search {
-  width: 50rem;
+  width: 70rem;
+  margin-left: 1rem;
 }
 
 @media screen and (max-width: 860px) {

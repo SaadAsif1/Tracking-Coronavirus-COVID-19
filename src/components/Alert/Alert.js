@@ -91,9 +91,7 @@ export default function Alert() {
           block
         >
           <h3 className='buttonText'>
-            {switchState
-              ? 'View COVID-19 Global graph data'
-              : 'View COVID-19 Global Text Data'}
+            {switchState ? 'COVID-19 Global graph data' : 'COVID-19 Global Text Data'}
           </h3>
         </Button>
         <div className='search'>
