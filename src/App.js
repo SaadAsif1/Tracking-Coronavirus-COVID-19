@@ -20,17 +20,17 @@ export default function App() {
       <Alert />
       <div className='card-container'>
         <Tabs type='card'>
-          <TabPane tab='Countries' key='1'>
-            <Countries />
+          <TabPane tab='Map' key='1'>
+            <MapChart />
           </TabPane>
-          <TabPane tab='States' key='2'>
-            <States />
-          </TabPane>
-          <TabPane tab='COVID-19 Timeline' key='3'>
+          <TabPane tab='Timeline' key='2'>
             <TimelineChart />
           </TabPane>
-          <TabPane tab='COVID-19 Map Data' key='4'>
-            <MapChart />
+          <TabPane tab='Countries' key='3'>
+            <Countries />
+          </TabPane>
+          <TabPane tab='States' key='4'>
+            <States />
           </TabPane>
         </Tabs>
       </div>
