@@ -27,7 +27,7 @@ export default function Contries({ contriesFilter, data }) {
               <p>Today Deaths {virusData.todayDeaths} People</p>
               <p>People Recovered {virusData.recovered} People</p>
               <p>Critival condition: {virusData.critical} People</p>
-              <p>Actvie: {virusData.active} People</p>
+              <p>Active: {virusData.active} People</p>
               <p>Case Per One Million: {virusData.casesPerOneMillion} / 1,000,000</p>
             </Card>
           </div>
