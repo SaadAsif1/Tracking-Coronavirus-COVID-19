@@ -22,11 +22,10 @@ export default function StatesText({ stateFilter, data }) {
               title={`${virusData.state}`}
             >
               <p>Comfirmed: {virusData.cases} People</p>
-              <p>Today Cases {virusData.todayCases} People</p>
+              <p>Today Cases: {virusData.todayCases} People</p>
               <p>Deaths {virusData.deaths} People</p>
-              <p>Today Deaths {virusData.todayDeaths} People</p>
-              <p>People Recovered {virusData.recovered} People</p>
-              <p>Critival condition: {virusData.critical} People</p>
+              <p>Today Deaths: {virusData.todayDeaths} People</p>
+              <p>People Recovered: {virusData.recovered} People</p>
               <p>Active: {virusData.active} People</p>
             </Card>
           </div>

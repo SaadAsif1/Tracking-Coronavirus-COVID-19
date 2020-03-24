@@ -22,11 +22,11 @@ export default function Contries({ contriesFilter, data }) {
               title={`${virusData.country}`}
             >
               <p>Comfirmed: {virusData.cases} People</p>
-              <p>Today Cases {virusData.todayCases} People</p>
-              <p>Deaths {virusData.deaths} People</p>
-              <p>Today Deaths {virusData.todayDeaths} People</p>
+              <p>Today Cases: {virusData.todayCases} People</p>
+              <p>Deaths: {virusData.deaths} People</p>
+              <p>Today Deaths: {virusData.todayDeaths} People</p>
               <p>People Recovered {virusData.recovered} People</p>
-              <p>Critival condition: {virusData.critical} People</p>
+              <p>Critical condition: {virusData.critical} People</p>
               <p>Active: {virusData.active} People</p>
               <p>Case Per One Million: {virusData.casesPerOneMillion} / 1,000,000</p>
             </Card>
