@@ -21,10 +21,10 @@ export default function App() {
       <div className='card-container'>
         <Tabs type='card'>
           <TabPane tab='Map' key='1'>
-            <TimelineChart />
+            <MapChart />
           </TabPane>
           <TabPane tab='Timeline' key='2'>
-            <MapChart />
+            <TimelineChart />
           </TabPane>
           <TabPane tab='Countries' key='3'>
             <Countries />

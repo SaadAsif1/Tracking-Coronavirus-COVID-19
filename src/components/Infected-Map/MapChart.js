@@ -69,7 +69,7 @@ export default function MapChart() {
           [mapLatData.maxLat + bufferLat, mapLatData.maxLong + bufferLong]
         ]}
       >
-        <TileLayer url='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+        <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
 
         {mapData === '' ? (
           <div>Loading...</div>
