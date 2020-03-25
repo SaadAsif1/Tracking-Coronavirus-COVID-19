@@ -72,7 +72,7 @@
 
 @media all and (min-width: 1600px) {
   .search {
-    width: 80rem;
+    width: 100rem;
     margin-left: 1rem;
   }
 }
