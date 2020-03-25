@@ -70,8 +70,9 @@
   }
 }
 
-/* Smartphones (portrait and landscape) ----------- */
-/* @media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-  .buttonContainer {
-    display: block;
-  }  } */
+@media all and (min-width: 1600px) {
+  .search {
+    width: 80rem;
+    margin-left: 1rem;
+  }
+}
