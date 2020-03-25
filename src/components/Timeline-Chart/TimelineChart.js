@@ -24,12 +24,11 @@ export default function TimelineChart() {
 
   useEffect(() => {
     axios
-      .get('https://corona.lmao.ninja/historical/usa')
+      .get('https://corona.lmao.ninja/v2/historical/usa')
       .then(res => {
         const dataDates = Object.keys(res.data.timeline.cases);
         const cases = Object.values(res.data.timeline.cases);
         const deaths = Object.values(res.data.timeline.deaths);
-        const recovered = Object.values(res.data.timeline.recovered);
 
         let timeLineData = [];
 
@@ -37,15 +36,14 @@ export default function TimelineChart() {
           let obj = {
             name: dataDates[i],
             Cases: cases[i],
-            Deaths: deaths[i],
-            Recovered: recovered[i]
+            Deaths: deaths[i]
           };
           timeLineData.push(obj);
         }
         setValues({
           ...values,
           data: timeLineData,
-          timelineName: res.data.standardizedCountryName
+          timelineName: res.data.country
         });
       })
       .catch(err => {
@@ -59,12 +57,11 @@ export default function TimelineChart() {
 
   const handleSearch = () => {
     axios
-      .get(`https://corona.lmao.ninja/historical/${timelineSearch}`)
+      .get(`https://corona.lmao.ninja/v2/historical/${timelineSearch}`)
       .then(res => {
         const dataDates = Object.keys(res.data.timeline.cases);
         const cases = Object.values(res.data.timeline.cases);
         const deaths = Object.values(res.data.timeline.deaths);
-        const recovered = Object.values(res.data.timeline.recovered);
 
         let timeLineData = [];
 
@@ -72,8 +69,7 @@ export default function TimelineChart() {
           let obj = {
             name: dataDates[i],
             Cases: cases[i],
-            Deaths: deaths[i],
-            Recovered: recovered[i]
+            Deaths: deaths[i]
           };
           timeLineData.push(obj);
         }
@@ -81,7 +77,7 @@ export default function TimelineChart() {
         setValues({
           ...values,
           data: timeLineData,
-          timelineName: res.data.standardizedCountryName
+          timelineName: res.data.country
         });
       })
       .catch(err => {
@@ -125,7 +121,6 @@ export default function TimelineChart() {
               <Legend />
               <Line dataKey='Cases' type='monotone' stroke='#8884d8' />
               <Line dataKey='Deaths' type='monotone' stroke='#82ca9d' />
-              <Line dataKey='Recovered' type='monotone' stroke='#000' />
             </LineChart>
           </ResponsiveContainer>
         </div>

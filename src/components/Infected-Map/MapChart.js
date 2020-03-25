@@ -84,7 +84,6 @@ export default function MapChart() {
                 stroke={false}
               >
                 <Tooltip direction='top'>
-                  {console.log(city.confirmed)}
                   <h3>{city.name}</h3>
                   <hr />
                   <div>Confirmed Cases: {city.confirmed}</div>
