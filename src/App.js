@@ -1,11 +1,11 @@
 import React from 'react';
+import { Tabs } from 'antd';
+import { GithubFilled } from '@ant-design/icons';
 import Alert from './components/Alert/Alert';
 import Countries from './components/Countries/Countries';
 import States from './components/Us-States/States';
 import MapChart from './components/Infected-Map/MapChart';
 import TimelineChart from './components/Timeline-Chart/TimelineChart';
-import { Tabs } from 'antd';
-import { GithubFilled } from '@ant-design/icons';
 const { TabPane } = Tabs;
 
 export default function App() {
