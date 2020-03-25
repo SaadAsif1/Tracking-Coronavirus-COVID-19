@@ -61,7 +61,7 @@ export default function MapChart() {
         Regions Affected by COVID-19
       </h2>
       <Map
-        style={{ height: '480px', width: '100%', marginBottom: '1rem' }}
+        style={{ height: '70vh', width: '100%', marginBottom: '1rem' }}
         zoom={1}
         center={[centerLat, centerLong]}
         bounds={[

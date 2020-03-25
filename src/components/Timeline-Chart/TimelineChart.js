@@ -98,7 +98,7 @@ export default function TimelineChart() {
       {data === '' ? (
         <div>Loading...</div>
       ) : (
-        <div style={{ width: '100%', height: '400px', paddingBottom: '3rem' }}>
+        <div style={{ width: '100%', height: '500px', paddingBottom: '3rem' }}>
           <div style={{ textAlign: 'center', margin: '1rem' }}>
             <h2 style={{ textTransform: 'capitalize' }}>
               {timelineName} COVID-19 Timeline
