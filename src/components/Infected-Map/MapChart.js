@@ -16,7 +16,12 @@ export default function MapChart() {
       .get('https://corona.lmao.ninja/v2/jhucsse')
       .then(res => {
         res.data.map(dataValue => {
-          let country = dataValue.country;
+          let country;
+          if (dataValue.province) {
+            country = dataValue.province;
+          } else {
+            country = dataValue.country;
+          }
           let cordinates = [
             Number(dataValue.coordinates.latitude),
             Number(dataValue.coordinates.longitude)
