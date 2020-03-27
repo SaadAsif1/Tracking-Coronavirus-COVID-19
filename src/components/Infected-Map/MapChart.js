@@ -13,7 +13,7 @@ export default function MapChart() {
   useEffect(() => {
     let name = [];
     axios
-      .get('https://corona.lmao.ninja/jhucsse')
+      .get('https://corona.lmao.ninja/v2/jhucsse')
       .then(res => {
         res.data.map(dataValue => {
           let country = dataValue.country;
