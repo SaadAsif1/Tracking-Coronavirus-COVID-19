@@ -5,7 +5,7 @@ import 'leaflet/dist/leaflet.css';
 
 export default function MapChart() {
   const [values, setValues] = useState({
-    mapData: ''
+    mapData: '',
   });
 
   const { mapData } = values;
@@ -14,8 +14,8 @@ export default function MapChart() {
     let name = [];
     axios
       .get('https://corona.lmao.ninja/v2/jhucsse')
-      .then(res => {
-        res.data.map(dataValue => {
+      .then((res) => {
+        res.data.map((dataValue) => {
           let country;
           if (dataValue.province) {
             country = dataValue.province;
@@ -24,7 +24,7 @@ export default function MapChart() {
           }
           let cordinates = [
             Number(dataValue.coordinates.latitude),
-            Number(dataValue.coordinates.longitude)
+            Number(dataValue.coordinates.longitude),
           ];
           let confirmed = dataValue.stats.confirmed;
           let deaths = dataValue.stats.deaths;
@@ -35,13 +35,13 @@ export default function MapChart() {
             coordinates: cordinates,
             confirmed,
             deaths,
-            recovered
+            recovered,
           };
           name.push(mapData);
         });
         setValues({ ...values, mapData: name });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }, []);
@@ -50,7 +50,7 @@ export default function MapChart() {
     minLat: -6.1751,
     maxLat: 55.7558,
     minLong: 37.6173,
-    maxLong: 139.6917
+    maxLong: 139.6917,
   };
 
   // Zoom
@@ -71,7 +71,7 @@ export default function MapChart() {
         center={[centerLat, centerLong]}
         bounds={[
           [mapLatData.minLat - bufferLat, mapLatData.minLong - bufferLong],
-          [mapLatData.maxLat + bufferLat, mapLatData.maxLong + bufferLong]
+          [mapLatData.maxLat + bufferLat, mapLatData.maxLong + bufferLong],
         ]}
       >
         <TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
@@ -84,7 +84,7 @@ export default function MapChart() {
               <CircleMarker
                 key={k}
                 center={city.coordinates}
-                radius={4 * Math.log(Number(city.confirmed) / 10)}
+                radius={2 * Math.log(Number(city.confirmed) / 10)}
                 fillOpacity={0.5}
                 stroke={false}
               >
