@@ -13,7 +13,7 @@ export default function App() {
     <div style={{ width: '90%', margin: '0 auto' }}>
       <h1 className='title'>COVID-19 Updates</h1>
       <a
-        href='https://github.com/NovelCOVID/API'
+        href='https://github.com/SaadAsif1/Tracking-Coronavirus-COVID-19'
         target='_blank'
         rel='noopener noreferrer'
         className='github-corner'
