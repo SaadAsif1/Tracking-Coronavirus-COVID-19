@@ -11,6 +11,7 @@ const { TabPane } = Tabs;
 export default function App() {
   return (
     <div style={{ width: '90%', margin: '0 auto' }}>
+      {/* TITLE */}
       <h1 className='title'>COVID-19 Updates</h1>
       <a
         href='https://github.com/SaadAsif1/Tracking-Coronavirus-COVID-19'
