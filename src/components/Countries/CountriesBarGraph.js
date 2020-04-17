@@ -8,7 +8,7 @@ import {
   Tooltip,
   Legend,
   Bar,
-  ResponsiveContainer
+  ResponsiveContainer,
 } from 'recharts';
 import { Input } from 'antd';
 const { Search } = Input;
@@ -18,41 +18,41 @@ export default function CountriesBarGraph() {
     data: '',
     searchCountries: '',
     graphData: '',
-    graphName: ''
+    graphName: '',
   });
 
   const { data, searchCountries, graphData, graphName } = values;
 
   useEffect(() => {
     axios
-      .get(`https://corona.lmao.ninja/countries/usa`)
-      .then(res => {
+      .get(`https://corona.lmao.ninja/v2/countries/usa`)
+      .then((res) => {
         const data = res.data;
         const graphName = `${data.country} Total Cases: ${data.cases}`;
         const graphData = [
           { name: 'Today Cases', todayCases: data.todayCases },
           { name: 'Total Deaths', deaths: data.deaths },
           { name: 'Today Deaths', todayDeaths: data.todayDeaths },
-          { name: 'Critical People', critical: data.critical }
+          { name: 'Critical People', critical: data.critical },
         ];
         setValues({ ...values, graphData, graphName, data, searchCountries: 'USA' });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }, []);
 
-  const handleChange = inputValues => event => {
+  const handleChange = (inputValues) => (event) => {
     setValues({ ...values, [inputValues]: event.target.value });
   };
 
   const handleSearch = () => {
     axios
-      .get(`https://corona.lmao.ninja/countries/${searchCountries}`)
-      .then(res => {
+      .get(`https://corona.lmao.ninja/v2/countries/${searchCountries}`)
+      .then((res) => {
         if (typeof res.data === 'string') {
           return setValues({
             ...values,
             graphName: 'Please Select Another Country ',
-            graphData: []
+            graphData: [],
           });
         }
         const data = res.data;
@@ -61,11 +61,11 @@ export default function CountriesBarGraph() {
           { name: 'Today Cases', todayCases: data.todayCases },
           { name: 'Total Deaths', deaths: data.deaths },
           { name: 'Today Deaths', todayDeaths: data.todayDeaths },
-          { name: 'Critical People', critical: data.critical }
+          { name: 'Critical People', critical: data.critical },
         ];
         setValues({ ...values, graphData, graphName, data });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   };
 
   return (
@@ -92,7 +92,7 @@ export default function CountriesBarGraph() {
                   top: 20,
                   right: 30,
                   left: 20,
-                  bottom: 5
+                  bottom: 5,
                 }}
               >
                 <CartesianGrid strokeDasharray='3 3' />

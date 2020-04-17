@@ -12,18 +12,18 @@ export default function Alert() {
     switchState: true,
     data: '',
     countrieSearch: { show: false, data: null },
-    displayCard: false
+    displayCard: false,
   });
 
   const { switchState, data, countrieSearch, displayCard } = values;
 
   useEffect(() => {
     axios
-      .get('https://corona.lmao.ninja/all')
-      .then(res => {
+      .get('https://corona.lmao.ninja/v2/all')
+      .then((res) => {
         setValues({ ...values, data: res.data });
       })
-      .catch(err => console.log(err));
+      .catch((err) => console.log(err));
   }, []);
 
   const handleClick = () => {
@@ -38,43 +38,43 @@ export default function Alert() {
     setValues({
       ...values,
       countrieSearch: { show: false, data: null },
-      displayCard: false
+      displayCard: false,
     });
   };
 
-  const handleSearch = value => {
+  const handleSearch = (value) => {
     if ('' === value) {
       return setValues({
         ...values,
-        countrieSearch: { show: false, data: 'Please select any Country' }
+        countrieSearch: { show: false, data: 'Please select any Country' },
       });
     }
     setValues({
       ...values,
       countrieSearch: { show: false, data: '' },
-      displayCard: false
+      displayCard: false,
     });
     axios
-      .get(`https://corona.lmao.ninja/countries/${value}`)
-      .then(res => {
+      .get(`https://corona.lmao.ninja/v2/countries/${value}`)
+      .then((res) => {
         if (typeof res.data === 'string') {
           return setValues({
             ...values,
             countrieSearch: { show: false, data: res.data },
-            displayCard: false
+            displayCard: false,
           });
         }
         setValues({
           ...values,
           countrieSearch: { show: true, data: res.data },
-          displayCard: true
+          displayCard: true,
         });
       })
-      .catch(err => {
+      .catch((err) => {
         setValues({
           ...values,
           countrieSearch: { show: false, data: 'Please Choose a Valid Country' },
-          displayCard: false
+          displayCard: false,
         });
       });
   };

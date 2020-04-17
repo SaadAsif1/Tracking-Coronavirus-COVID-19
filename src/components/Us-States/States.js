@@ -9,24 +9,24 @@ export default function States() {
   const [values, setValues] = useState({
     switchStates: true,
     stateFilter: '',
-    data: ''
+    data: '',
   });
 
   const { switchStates, stateFilter, data } = values;
 
   useEffect(() => {
     axios
-      .get('https://corona.lmao.ninja/states')
-      .then(res => {
+      .get('https://corona.lmao.ninja/v2/states')
+      .then((res) => {
         setValues({ ...values, data: res.data });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }, []);
 
   // filter search
-  const handleStateFileter = e => {
+  const handleStateFileter = (e) => {
     setValues({ ...values, stateFilter: e.target.value });
   };
 

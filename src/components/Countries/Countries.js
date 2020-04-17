@@ -9,24 +9,24 @@ export default function Countries() {
   const [values, setValues] = useState({
     switchStates: true,
     contriesFilter: '',
-    data: ''
+    data: '',
   });
 
   const { switchStates, contriesFilter, data } = values;
 
   useEffect(() => {
     axios
-      .get('https://corona.lmao.ninja/countries')
-      .then(res => {
+      .get('https://corona.lmao.ninja/v2/countries')
+      .then((res) => {
         setValues({ ...values, data: res.data });
       })
-      .catch(err => {
+      .catch((err) => {
         console.log(err);
       });
   }, []);
 
   // filter search
-  const handleContrieFilter = e => {
+  const handleContrieFilter = (e) => {
     setValues({ ...values, contriesFilter: e.target.value });
   };
 
