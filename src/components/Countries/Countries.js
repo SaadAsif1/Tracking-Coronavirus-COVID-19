@@ -7,7 +7,7 @@ import './Countries.css';
 
 export default function Countries() {
   const [values, setValues] = useState({
-    switchStates: true,
+    switchStates: false,
     contriesFilter: '',
     data: '',
   });

@@ -7,7 +7,7 @@ import './States.css';
 
 export default function States() {
   const [values, setValues] = useState({
-    switchStates: true,
+    switchStates: false,
     stateFilter: '',
     data: '',
   });
